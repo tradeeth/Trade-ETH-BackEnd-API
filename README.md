@@ -1,11 +1,11 @@
-# ![ForkDelta logo](https://forkdelta.github.io/next/favicon-32x32.png) ForkDelta Backend
+# ![TradeETH logo](logo.png) TradeETH Backend API
 
 [![Build Status](https://travis-ci.org/forkdelta/backend-replacement.svg?branch=master)](https://travis-ci.org/forkdelta/backend-replacement)
 [![Known Vulnerabilities](https://snyk.io/test/github/forkdelta/backend-replacement/badge.svg)](https://snyk.io/test/github/forkdelta/backend-replacement)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/forkdelta/tokenbase/issues)
 
 
-This repository hosts the source code of ForkDelta backend. The backend provides off-chain orderbook functionality and an API to get a filtered view of Ethereum blockchain events on an [EtherDelta-like contract](https://www.reddit.com/r/EtherDelta/comments/6kdiyl/smart_contract_overview/).
+This repository hosts the source code of TradeETH API backend. The backend provides off-chain orderbook functionality and an API to get a filtered view of Ethereum blockchain events on an [EtherDelta-like contract](https://www.reddit.com/r/EtherDelta/comments/6kdiyl/smart_contract_overview/).
 
 Best way to learn about a system is to read the source code. Start with a look at [docker-compose.yml](docker-compose.yml).
 
@@ -23,7 +23,7 @@ Requirements:
 * Basic familiarity with Docker keywords: image, container (https://docs.docker.com/get-started/#docker-concepts)
 
 Setup:
-1. Clone the repo (git clone https://github.com/forkdelta/backend-replacement.git)
+1. Clone the repo (git clone https://github.com/tradeeth/Trade-ETH-BackEnd-API.git)
 2. Navigate to the root of the working copy, where the README file is.
 3. Copy `default.env` file to `.env` in root.
 4. Uncomment the `COMPOSE_FILE=` line in `.env` to enable mounting of working copy code into the containers.
@@ -39,9 +39,6 @@ Tips:
   so it's enough to restart the container (with `docker-compose restart <service-name>`) to apply changes for a given service.
 * You can inspect the list of currently running containers with `docker-compose ps`.
 
-## Contributors
-* [Arseniy Ivanov](https://github.com/freeatnet)
-* [Jonathon Dunford](https://github.com/JonathonDunford)
 
 ## License
 
