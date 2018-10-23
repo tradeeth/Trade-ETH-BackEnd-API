@@ -108,7 +108,7 @@ services:
        tty: true
        command: >
            --jsonrpc-interface 0.0.0.0
-           --jsonrpc-hosts all --chain mainnet
+           --jsonrpc-hosts all --chain ${ETH_CHAIN}
            --base-path /var/parity --jsonrpc-cors all
        ports:
              - "${ETH_HTTP_EXPOSED_PORT}:8545"
