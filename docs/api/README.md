@@ -1,14 +1,14 @@
-# ForkDelta API
+# TradeETH API
 
-ForkDelta's API gives you access to ticker information, orders, trades, deposits, withdrawals, and anything else available through our website. You can also interact directly with the smart contract to get trades, deposits, and withdrawals. For an example of directly working with the contract, take a look at our [contract_observer.py](https://github.com/forkdelta/backend-replacement/blob/master/app/services/contract_observer.py). ForkDelta's orderbook is primarily stored offchain, but can be accessed with our public interface or through this API. To learn more about our order system, take a look at our [backend repository](https://github.com/forkdelta/backend-replacement).
+TradeETH's API gives you access to ticker information, orders, trades, deposits, withdrawals, and anything else available through our website. You can also interact directly with the smart contract to get trades, deposits, and withdrawals. For an example of directly working with the contract, take a look at our [contract_observer.py](https://github.com/tradeeth/backend-replacement/blob/master/app/services/contract_observer.py). TradeETH's orderbook is primarily stored offchain, but can be accessed with our public interface or through this API. To learn more about our order system, take a look at our [backend repository](https://github.com/tradeeth/backend-replacement).
 
 
 # Websocket Server
 
-ForkDelta's API is socket.io based. The API utilizes SSL on all connections to keep your data private.
-You can connect to ForkDelta's API through this endpoint:
+TradeETH's API is socket.io based. The API utilizes SSL on all connections to keep your data private.
+You can connect to TradeETH's API through this endpoint:
 
- - https://api.forkdelta.com
+ - https://api.tradeeth.com
 
 ## Rate Limiting
 
@@ -16,16 +16,16 @@ Please try to limit your calls to the API to a reasonable frequency.
 
 The API currently limits clients to 6 concurrent connections and 12 reconnects per minute per IP address. We reserve the right to adjust these without advanced notice.
 
-The API does not limit the number of `getMarket` and `order` messages the client can send at this time. Protip: subscribe to [this issue](https://github.com/forkdelta/proposals/issues/11) to get updates on when that changes.
+The API does not limit the number of `getMarket` and `order` messages the client can send at this time. Protip: subscribe to [this issue](https://github.com/tradeeth/proposals/issues/11) to get updates on when that changes.
 
 Clients that violate rate limits repeatedly may be blocked.
 
 ## Best Practices
 ### Identify your client
-Make sure to set a custom User Agent for your ForkDelta API client whenever possible. The User Agent string should include the name and version of the client, as well as the client's homepage URL and author's contact (email), like so:
+Make sure to set a custom User Agent for your TradeETH API client whenever possible. The User Agent string should include the name and version of the client, as well as the client's homepage URL and author's contact (email), like so:
 
 ```
-ForkDelta Price Alerts by freeatnet (v0.1.5 (8b0aad6)) (https://project-homepage.com, freeatnet@freeatnet.com)
+TradeETH Price Alerts by freeatnet (v0.1.5 (8b0aad6)) (https://project-homepage.com, freeatnet@freeatnet.com)
 ```
 
 A custom User Agent string will allow us to reach out to you in case of any issues and will help us debug issues if you reach out for support.
@@ -35,7 +35,7 @@ If you receive a one-off disconnect from the server, you may reconnect right awa
 
 ## Requests
 
-There are two messages you can send to the ForkDelta websocket API:
+There are two messages you can send to the TradeETH websocket API:
 1. getMarket
 2. message
 
@@ -69,9 +69,9 @@ Example `returnTicker`:
       "tokenAddr":"0x11f8dd7699147566cf193596083d45c8f592c4ba",
 [...]
 ```
-If you would like to get data on each ticker including names, please take a look at our [tokenbase repository](https://github.com/forkdelta/tokenbase). If you would just like a simple way to access ticker symbols, take a look at our [configuration JSON](https://forkdelta.github.io/config/main.json).
+If you would like to get data on each ticker including names, please take a look at our [tokenbase repository](https://github.com/tradeeth/tokenbase). If you would just like a simple way to access ticker symbols, take a look at our [configuration JSON](https://tradeeth.github.io/config/main.json).
 
-We also supply a REST version of this data, but highly recommend using the websocket server for the most up to date information. The REST version can be found here: https://api.forkdelta.com/returnTicker
+We also supply a REST version of this data, but highly recommend using the websocket server for the most up to date information. The REST version can be found here: https://api.tradeeth.com/returnTicker
 
 #### trades | myTrades
 
@@ -173,7 +173,7 @@ Example `myFunds`:
 
 ### 2) message ( order )
 
-`message` allows you to post an order directly to ForkDelta and accepts one required parameter.
+`message` allows you to post an order directly to TradeETH and accepts one required parameter.
 
 `order` must be a properly formatted JSON object containing the following properties:
 - `amountGive`: the amount you want to give (in wei or the base unit of the token)
@@ -225,17 +225,17 @@ New deposits and withdrawals will be emitted as they occur. The data structure o
 
 # API Client Libraries
 
-Below is a (possibly incomplete) list of third-party libraries that can help you work with ForkDelta API:
+Below is a (possibly incomplete) list of third-party libraries that can help you work with TradeETH API:
 
-* **PHP:** [forkdelta-api-wrapper](https://github.com/chetcuti/forkdelta-api-wrapper) by @chetcuti
-* **Python:** [etherdelta](https://github.com/miguelmota/py-etherdelta) by @miguelmota offers ForkDelta client as an option
+* **PHP:** [tradeeth-api-wrapper](https://github.com/chetcuti/tradeeth-api-wrapper) by @chetcuti
+* **Python:** [etherdelta](https://github.com/miguelmota/py-etherdelta) by @miguelmota offers TradeETH client as an option
 
-These are third-party libraries; as such, ForkDelta has no control over them and offers no support for them. You should review their source code to make sure they are bug-free, safe, secure, and fit for your use.
+These are third-party libraries; as such, TradeETH has no control over them and offers no support for them. You should review their source code to make sure they are bug-free, safe, secure, and fit for your use.
 
 If you would like to add your library to this list, let us know by opening an issue.
 
 # More Information
-For more information, or to see how this websocket server works, take a look at [websocket_server.py](https://github.com/forkdelta/backend-replacement/blob/master/app/services/websocket_server.py)
+For more information, or to see how this websocket server works, take a look at [websocket_server.py](https://github.com/tradeeth/Trade-ETH-BackEnd-API/blob/master/app/services/websocket_server.py)
 
 
 
