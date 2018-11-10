@@ -101,7 +101,7 @@ services:
     image: redis:4.0-alpine
 
   ethereum:
-       image: parity/parity:v2.1.3
+       image: parity/parity:v2.1.4
        restart: always
        volumes:
          - ${HOST_CHAIN_LOCATION}:/var/parity
