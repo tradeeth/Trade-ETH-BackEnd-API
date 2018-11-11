@@ -229,7 +229,7 @@ async def main(my_id, num_observers):
     # - websockets.exceptions.ConnectionClosed: LIKE WebSocket connection is closed: code = 1006 (connection closed abnormally [internal]),
 
 
-NUM_OBSERVERS = 6
+NUM_OBSERVERS = 1
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     tasks = [
